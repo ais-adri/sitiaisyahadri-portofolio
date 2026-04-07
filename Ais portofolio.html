@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siti Aisyah Adri — Digital Marketing Strategist</title>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Dela+Gothic+One&family=Noto+Sans+JP:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     EDIT GUIDE: To update content, scroll to the <script> section
+     and edit the DATA object at the top. No coding needed!
+     ============================================================ */
+
+  :root {
+    --ink: #0d0d0d;
+    --paper: #f5f0e8;
+    --paper2: #ede8d8;
+    --accent: #e8003d;
+    --accent2: #ff6b9d;
+    --accent3: #00c9ff;
+    --panel-border: 3px solid #0d0d0d;
+    --panel-border-thick: 5px solid #0d0d0d;
+    --shadow: 6px 6px 0px #0d0d0d;
+    --shadow-lg: 10px 10px 0px #0d0d0d;
+    --font-display: 'Dela Gothic One', sans-serif;
+    --font-manga: 'Bangers', cursive;
+    --font-jp: 'Noto Sans JP', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-jp);
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* ── HALFTONE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #0d0d0d11 1px, transparent 1px);
+    background-size: 12px 12px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── CUSTOM SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--paper2); border-left: 2px solid var(--ink); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border: 2px solid var(--ink); }
+
+  /* ══════════════════════════════════════════
+     NAV
+  ══════════════════════════════════════════ */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--ink);
+    border-bottom: 3px solid var(--accent);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-manga);
+    font-size: 1.8rem;
+    color: var(--paper);
+    letter-spacing: 2px;
+  }
+  .nav-logo span { color: var(--accent); }
+
+  .nav-links { display: flex; gap: 0.25rem; }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--paper);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ══════════════════════════════════════════
+     HERO
+  ══════════════════════════════════════════ */
+  #hero {
+    min-height: 100vh;
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Speed lines background */
+  .speed-lines {
+    position: absolute; inset: 0;
+    background: repeating-conic-gradient(from 0deg at 110% 50%, transparent 0deg, transparent 3.5deg, #0d0d0d08 3.5deg, #0d0d0d08 4deg);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 4rem 3rem 4rem 4rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-chapter {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .hero-chapter::before {
+    content: '';
+    display: inline-block; width: 40px; height: 2px;
+    background: var(--accent);
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name .line2 { color: var(--accent); }
+
+  .hero-title {
+    font-family: var(--font-manga);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    letter-spacing: 3px;
+    color: #555;
+    margin-bottom: 2rem;
+    padding-left: 4px;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 440px;
+    color: #333;
+    border-left: 4px solid var(--accent);
+    padding-left: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-stats {
+    display: flex; gap: 1.5rem; flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 16px;
+    border: var(--panel-border);
+    box-shadow: 4px 4px 0 var(--accent);
+    text-align: center;
+  }
+  .stat-box .num {
+    font-family: var(--font-manga);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-box .label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #aaa;
+    margin-top: 2px;
+  }
+
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: var(--panel-border);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+    display: inline-block;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .btn-primary:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--ink); }
+  .btn-secondary {
+    background: var(--paper);
+    color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+  .btn-secondary:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--accent); }
+
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4rem 4rem 4rem 2rem;
+  }
+
+  .manga-panel-stack {
+    position: relative;
+    width: 340px; height: 420px;
+  }
+
+  .panel-bg {
+    position: absolute;
+    width: 300px; height: 380px;
+    background: var(--ink);
+    border: var(--panel-border-thick);
+    top: 30px; left: 30px;
+  }
+
+  .panel-main {
+    position: absolute;
+    width: 300px; height: 380px;
+    background: var(--paper2);
+    border: var(--panel-border-thick);
+    top: 0; left: 0;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .panel-main-inner {
+    width: 100%; height: 100%;
+    background: linear-gradient(145deg, #ffecd2, #fcb69f22, var(--paper2));
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Manga-style character placeholder */
+  .char-art {
+    font-family: var(--font-manga);
+    font-size: 9rem;
+    line-height: 1;
+    color: var(--ink);
+    opacity: 0.08;
+    position: absolute;
+    bottom: -10px;
+    user-select: none;
+  }
+
+  .panel-name-tag {
+    position: absolute;
+    bottom: 20px; left: 20px;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--font-manga);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border: 3px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .panel-sfx {
+    position: absolute; top: 16px; right: -20px;
+    font-family: var(--font-manga);
+    font-size: 3rem;
+    color: var(--accent2);
+    letter-spacing: -1px;
+    transform: rotate(8deg);
+    text-shadow: 3px 3px 0 var(--ink);
+    animation: sfx-pulse 2s ease-in-out infinite;
+  }
+  @keyframes sfx-pulse {
+    0%,100% { transform: rotate(8deg) scale(1); }
+    50% { transform: rotate(8deg) scale(1.07); }
+  }
+
+  .panel-contact-strip {
+    position: absolute; top: -1px; right: -120px;
+    background: var(--ink); color: var(--paper);
+    font-family: var(--font-mono); font-size: 0.55rem;
+    padding: 6px 10px;
+    writing-mode: vertical-rl;
+    letter-spacing: 2px;
+    border: 2px solid var(--accent);
+    line-height: 1.6;
+  }
+
+  /* Floating JP text */
+  .jp-float {
+    position: absolute;
+    font-family: var(--font-jp);
+    font-weight: 900;
+    color: var(--ink);
+    opacity: 0.04;
+    font-size: 12rem;
+    line-height: 1;
+    right: -2rem;
+    top: 20%;
+    pointer-events: none;
+    writing-mode: vertical-rl;
+    user-select: none;
+  }
+
+  /* ══════════════════════════════════════════
+     SECTION BASE
+  ══════════════════════════════════════════ */
+  section {
+    position: relative; z-index: 1;
+    padding: 5rem 4rem;
+  }
+  section:nth-child(odd) { background: var(--paper); }
+  section:nth-child(even) { background: var(--paper2); }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 1rem;
+    margin-bottom: 3rem;
+    border-bottom: var(--panel-border-thick);
+    padding-bottom: 1rem;
+  }
+  .section-num {
+    font-family: var(--font-manga);
+    font-size: 4rem;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.3;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .section-jp {
+    font-family: var(--font-jp);
+    font-size: 0.75rem;
+    color: #999;
+    font-weight: 300;
+    margin-left: auto;
+    letter-spacing: 2px;
+  }
+
+  /* ══════════════════════════════════════════
+     ABOUT
+  ══════════════════════════════════════════ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .about-speech-bubble {
+    background: var(--paper);
+    border: var(--panel-border-thick);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+    position: relative;
+  }
+  .about-speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -22px; left: 40px;
+    border-left: 18px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 22px solid var(--ink);
+  }
+  .about-speech-bubble::before {
+    content: '';
+    position: absolute;
+    bottom: -16px; left: 42px;
+    border-left: 16px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 19px solid var(--paper);
+    z-index: 1;
+  }
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #222;
+  }
+  .about-text strong { color: var(--accent); }
+
+  .about-interest-box {
+    background: var(--ink);
+    color: var(--paper);
+    border: var(--panel-border-thick);
+    box-shadow: var(--shadow-lg);
+    padding: 2rem;
+  }
+  .interest-title {
+    font-family: var(--font-manga);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .interest-list { list-style: none; }
+  .interest-list li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #333;
+    display: flex; gap: 0.75rem; align-items: center;
+    color: #ccc;
+  }
+  .interest-list li::before {
+    content: '▶';
+    color: var(--accent);
+    font-size: 0.6rem;
+  }
+
+  /* ══════════════════════════════════════════
+     EXPERIENCE (Timeline-manga style)
+  ══════════════════════════════════════════ */
+  .exp-timeline { position: relative; }
+  .exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px; top: 0; bottom: 0;
+    width: 4px;
+    background: repeating-linear-gradient(to bottom, var(--ink) 0px, var(--ink) 12px, transparent 12px, transparent 20px);
+  }
+
+  .exp-item {
+    display: flex; gap: 2rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .exp-dot {
+    flex-shrink: 0;
+    width: 64px; height: 64px;
+    background: var(--accent);
+    border: var(--panel-border-thick);
+    box-shadow: 4px 4px 0 var(--ink);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; z-index: 2;
+    font-family: var(--font-manga);
+    font-size: 0.75rem;
+    color: var(--paper);
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .exp-card {
+    flex: 1;
+    background: var(--paper);
+    border: var(--panel-border-thick);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .exp-card:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow-lg); }
+
+  .exp-card-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 0.5rem;
+  }
+  .exp-company { font-family: var(--font-display); font-size: 1.3rem; }
+  .exp-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent2); letter-spacing: 1px; }
+
+  .exp-card-body { padding: 1.25rem 1.5rem; }
+  .exp-role {
+    font-family: var(--font-manga);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .exp-bullets { list-style: none; }
+  .exp-bullets li {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    padding: 4px 0 4px 20px;
+    border-bottom: 1px dashed #ddd;
+    color: #333;
+    position: relative;
+  }
+  .exp-bullets li:last-child { border-bottom: none; }
+  .exp-bullets li::before {
+    content: '◆';
+    position: absolute; left: 0;
+    color: var(--accent); font-size: 0.5rem;
+    top: 9px;
+  }
+  .exp-bullets li strong { color: var(--ink); font-weight: 700; }
+
+  .exp-clients {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: #888;
+    letter-spacing: 1px;
+    margin-top: 0.75rem;
+    background: var(--paper2);
+    padding: 6px 10px;
+    border-left: 3px solid var(--accent2);
+  }
+
+  /* ══════════════════════════════════════════
+     SKILLS
+  ══════════════════════════════════════════ */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-category {
+    border: var(--panel-border-thick);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .skill-category:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow-lg); }
+
+  .skill-cat-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 16px;
+    font-family: var(--font-manga);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .skill-cat-header span { font-size: 1.2rem; }
+
+  .skill-tags {
+    background: var(--paper);
+    padding: 14px 16px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .skill-tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border: 2px solid var(--ink);
+    background: var(--paper2);
+    text-transform: uppercase;
+  }
+  .skill-tag.hot {
+    background: var(--accent);
+    color: var(--paper);
+    border-color: var(--accent);
+  }
+
+  /* ══════════════════════════════════════════
+     PROJECTS / PORTFOLIO
+  ══════════════════════════════════════════ */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .project-card {
+    border: var(--panel-border-thick);
+    box-shadow: var(--shadow);
+    background: var(--paper);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+  .project-card:hover { transform: translate(-4px,-4px); box-shadow: var(--shadow-lg); }
+
+  .project-card-top {
+    height: 160px;
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    border-bottom: var(--panel-border-thick);
+  }
+  .project-card-top .proj-bg-text {
+    font-family: var(--font-manga);
+    font-size: 5rem;
+    color: #fff;
+    opacity: 0.06;
+    position: absolute;
+    letter-spacing: -4px;
+  }
+  .project-card-top .proj-icon {
+    font-size: 3.5rem;
+    position: relative; z-index: 1;
+  }
+  .project-type-badge {
+    position: absolute; top: 12px; right: 12px;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    border: 2px solid var(--paper);
+  }
+
+  .project-card-body { padding: 1.25rem 1.5rem; }
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+  .project-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+  .project-tags {
+    display: flex; flex-wrap: wrap; gap: 5px;
+  }
+  .project-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ── PORTFOLIO TABS ── */
+  .portfolio-tabs {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .tab-btn {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: var(--panel-border);
+    background: var(--paper);
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .tab-btn:hover, .tab-btn.active {
+    background: var(--ink);
+    color: var(--paper);
+    box-shadow: 3px 3px 0 var(--accent);
+  }
+  .tab-btn.active { background: var(--accent); border-color: var(--accent); color: var(--paper); box-shadow: 3px 3px 0 var(--ink); }
+
+  /* ── PORTFOLIO CATEGORY BLOCK ── */
+  .portfolio-category { margin-bottom: 3.5rem; }
+  .portfolio-category.hidden { display: none; }
+
+  .cat-label {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-family: var(--font-manga);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed var(--ink);
+  }
+  .cat-label .cat-icon { font-size: 1.4rem; }
+  .cat-label .cat-count {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 2px 8px;
+    border: 2px solid var(--ink);
+    letter-spacing: 1px;
+  }
+
+  /* ADD PORTFOLIO CTA */
+  .add-project-card {
+    border: 4px dashed #ccc;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 260px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: transparent;
+    text-decoration: none;
+    color: #aaa;
+  }
+  .add-project-card:hover { border-color: var(--accent); color: var(--accent); }
+  .add-icon { font-size: 3rem; margin-bottom: 0.75rem; }
+  .add-label { font-family: var(--font-manga); font-size: 1.4rem; letter-spacing: 2px; }
+  .add-sub { font-family: var(--font-mono); font-size: 0.65rem; margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+
+  /* ── ARTICLE CARD variant ── */
+  .article-card .project-card-top { height: 120px; background: #111; }
+  .article-card .article-meta {
+    display: flex; gap: 1rem; align-items: center;
+    margin-bottom: 0.6rem;
+  }
+  .article-date {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: #999;
+    letter-spacing: 1px;
+  }
+  .article-client {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: var(--paper2);
+    border: 1px solid #ccc;
+    padding: 2px 8px;
+    color: #666;
+  }
+
+  /* ══════════════════════════════════════════
+     CONTACT
+  ══════════════════════════════════════════ */
+  #contact {
+    background: var(--ink) !important;
+    color: var(--paper);
+  }
+  #contact .section-title { color: var(--paper); }
+  #contact .section-jp { color: #555; }
+  #contact .section-header { border-bottom-color: var(--accent); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-tagline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .contact-tagline span { color: var(--accent); }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 12px 16px;
+    border: 2px solid #333;
+    color: var(--paper);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); background: #1a1a1a; }
+  .contact-link-icon { font-size: 1.2rem; width: 24px; text-align: center; }
+
+  .contact-manga-panel {
+    border: var(--panel-border-thick);
+    border-color: #333;
+    box-shadow: 8px 8px 0 var(--accent);
+    padding: 2rem;
+    background: #111;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.8;
+  }
+  .contact-manga-panel .highlight { color: var(--accent2); }
+
+  /* ══════════════════════════════════════════
+     FOOTER
+  ══════════════════════════════════════════ */
+  footer {
+    background: var(--accent);
+    border-top: var(--panel-border-thick);
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-text {
+    font-family: var(--font-manga);
+    font-size: 1.1rem;
+    color: var(--paper);
+    letter-spacing: 2px;
+  }
+  .footer-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+  }
+
+  /* ══════════════════════════════════════════
+     RESPONSIVE
+  ══════════════════════════════════════════ */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 3rem 2rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+    .nav-links { display: none; }
+    .exp-timeline::before { left: 20px; }
+    .exp-dot { width: 46px; height: 46px; font-size: 0.6rem; }
+  }
+
+  /* ══════════════════════════════════════════
+     ANIMATIONS
+  ══════════════════════════════════════════ */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeInUp 0.6s ease both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero-left > *:nth-child(6) { animation-delay: 0.6s; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* Manga panel border flash on hover */
+  .exp-card::after, .project-card::after {
+    content: '';
+    position: absolute; inset: 0;
+    border: 4px solid var(--accent);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .exp-card:hover::after, .project-card:hover::after { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">SAA<span>.</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="speed-lines"></div>
+  <div class="jp-float">戦</div>
+
+  <div class="hero-left">
+    <div class="hero-chapter">Chapter 01 — The Strategist Appears</div>
+    <h1 class="hero-name">
+      SITI<br>
+      <span class="line2">AISYAH</span><br>
+      ADRI
+    </h1>
+    <div class="hero-title">Digital Marketing &amp; Content Strategist</div>
+    <p class="hero-tagline">
+      Builds brands. Engineers audiences. Converts content into revenue.
+      <strong>6+ years</strong> turning zero into 168K+ followers, 3,800+ leads/month,
+      and IDR 297M in annual revenue.
+    </p>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="num">168K+</div>
+        <div class="label">Organic Followers</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">3,800+</div>
+        <div class="label">Leads / Month</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">IDR 297M</div>
+        <div class="label">Annual Revenue</div>
+      </div>
+      <div class="stat-box">
+        <div class="num">IDR 40M</div>
+        <div class="label">Cost Saved / Month</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#experience" class="btn btn-primary">View Experience →</a>
+      <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="manga-panel-stack">
+      <div class="panel-bg"></div>
+      <div class="panel-main">
+        <div class="panel-main-inner">
+          <div style="font-family:var(--font-manga);font-size:6rem;color:var(--accent);opacity:0.15;position:absolute;top:20px">SAA</div>
+          <div style="font-family:var(--font-jp);font-size:1rem;font-weight:900;color:var(--ink);text-align:center;z-index:1;padding:2rem">
+            <div style="font-family:var(--font-manga);font-size:2.5rem;letter-spacing:3px;color:var(--accent)">LEVEL 6+</div>
+            <div style="font-size:0.85rem;margin-top:0.5rem;color:#555;letter-spacing:2px">CONTENT STRATEGIST</div>
+            <div style="margin-top:1.5rem;font-size:0.75rem;color:#888;line-height:2;font-family:var(--font-mono)">
+              ATK: SEO · COPY · STRATEGY<br>
+              DEF: DATA · CRM · KOL<br>
+              SPD: INSTAGRAM · TIKTOK<br>
+              MAG: SHOPIFY · WEBFLOW
+            </div>
+            <div style="margin-top:1.5rem;background:var(--ink);color:var(--paper);padding:8px 16px;font-family:var(--font-manga);font-size:1.1rem;letter-spacing:2px">
+              ★★★★★★
+            </div>
+          </div>
+          <div class="char-art">文</div>
+          <div class="panel-name-tag">AISYAH</div>
+        </div>
+      </div>
+      <div class="panel-sfx">BOOM!</div>
+      <div class="panel-contact-strip"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b1c2d8c5d8d0d8c2c8d0d9d0d5c3d8f1d6dcd0d8dd9fd2dedc">[email&#160;protected]</a> · +62-822-5857-2788</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2 class="section-title">About The Strategist</h2>
+    <div class="section-jp">プロフィール</div>
+  </div>
+  <div class="about-grid reveal">
+    <div>
+      <div class="about-speech-bubble">
+        <p class="about-text" id="about-text"></p>
+      </div>
+    </div>
+    <div class="about-interest-box">
+      <div class="interest-title">CURRENTLY EXPLORING</div>
+      <ul class="interest-list" id="interest-list"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2 class="section-title">Battle History</h2>
+    <div class="section-jp">経験</div>
+  </div>
+  <div class="exp-timeline" id="exp-timeline"></div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2 class="section-title">Skill Tree</h2>
+    <div class="section-jp">スキル</div>
+  </div>
+  <div class="skills-grid" id="skills-grid"></div>
+</section>
+
+<!-- ── PORTFOLIO ── -->
+<section id="portfolio">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2 class="section-title">Portfolio &amp; Projects</h2>
+    <div class="section-jp">ポートフォリオ</div>
+  </div>
+  <!-- FILTER TABS -->
+  <div class="portfolio-tabs" id="portfolio-tabs"></div>
+  <!-- CATEGORY BLOCKS -->
+  <div id="portfolio-categories"></div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="section-jp">連絡先</div>
+  </div>
+  <div class="contact-grid reveal">
+    <div>
+      <div class="contact-tagline">Ready to build your brand's <span>next chapter?</span></div>
+      <div class="contact-links">
+        <a href="/cdn-cgi/l/email-protection#abd8c2dfc2cac2d8d2cac3cacfd9c2ebccc6cac2c785c8c4c6" class="contact-link">
+          <span class="contact-link-icon">✉</span> <span class="__cf_email__" data-cfemail="20534954494149535941484144524960474d41494c0e434f4d">[email&#160;protected]</span>
+        </a>
+        <a href="tel:+6282258572788" class="contact-link">
+          <span class="contact-link-icon">☎</span> +62-822-5857-2788
+        </a>
+        <a href="https://linkedin.com/in/sitiaisyahadri" target="_blank" class="contact-link">
+          <span class="contact-link-icon">in</span> linkedin.com/in/sitiaisyahadri
+        </a>
+        <a href="https://linktr.ee/sitiaisyahadri" target="_blank" class="contact-link">
+          <span class="contact-link-icon">🌿</span> linktr.ee/sitiaisyahadri
+        </a>
+      </div>
+    </div>
+    <div class="contact-manga-panel">
+      <div style="font-family:var(--font-manga);font-size:1.5rem;color:var(--paper);letter-spacing:3px;margin-bottom:1rem">STATUS: OPEN TO WORK</div>
+      <div class="highlight">// Roles I'm looking for:</div>
+      <div>→ Content Marketing Manager</div>
+      <div>→ Digital Marketing Strategist</div>
+      <div>→ SEO Content Lead</div>
+      <div>→ Social Media Strategist</div>
+      <br>
+      <div class="highlight">// I bring to the table:</div>
+      <div>→ 6+ years hands-on experience</div>
+      <div>→ Proven revenue-generating content</div>
+      <div>→ Full-funnel digital ownership</div>
+      <div>→ Multi-industry client portfolio</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <div class="footer-text">SITI AISYAH ADRI © 2025</div>
+    <div class="footer-sub">Digital Marketing &amp; Content Strategist · Jakarta, Indonesia</div>
+  </div>
+  <div class="footer-sub" style="text-align:right">
+    Built with ❤️ &amp; manga energy<br>
+    <span style="color:rgba(255,255,255,0.5)">To add portfolio items, edit the DATA.portfolios array in the &lt;script&gt; tag</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ================================================================
+   ✏️  EDIT YOUR CONTENT HERE — No coding knowledge needed!
+   ================================================================
+   HOW TO ADD EXPERIENCE:
+   Copy one object in DATA.experience and fill in your details.
+
+   HOW TO ADD PORTFOLIO:
+   Copy one object in DATA.portfolios and fill in your details.
+   Set "link" to your project URL, or "" if none.
+
+   HOW TO ADD SKILLS:
+   Add items to any category inside DATA.skills,
+   or create a new category object.
+   ================================================================ */
+
+const DATA = {
+
+  about: `Having worked in the content marketing field for <strong>6+ years</strong>, I have a proven track record of scaling organic reach and driving <strong>3,800+ monthly converted leads</strong> in a niche industry. I operate at the intersection of storytelling and performance — equally comfortable crafting brand narratives as I am reading conversion data. I believe great content doesn't just get seen; it converts.`,
+
+  interests: [
+    "Urban data & city-scale behavioral insights",
+    "Cultural trend research & audience subcultures",
+    "Content strategy for emerging platforms",
+    "Anime, manga & visual storytelling",
+    "Workflow automation with AI tools"
+  ],
+
+  experience: [
+    {
+      company: "HydroClean Indonesia",
+      role: "Digital Marketing Supervisor",
+      date: "2020 – Present",
+      icon: "🌊",
+      bullets: [
+        "Architected organic social strategy across <strong>Instagram & TikTok</strong>, growing from 0 to <strong>168K+ followers in under 2 years</strong> — generating <strong>3,800+ qualified leads/month</strong> at a sustained 3% conversion rate",
+        "Managed end-to-end website operations (content, SEO, UX, purchasing flow) via <strong>Shopify & Webflow</strong>, contributing to <strong>IDR 297M in annual website revenue</strong>",
+        "Optimized Google Business Profile through strategic keyword targeting — achieving <strong>17,000+ impressions</strong> and strengthening local search visibility",
+        "Co-developed paid ad concepts with Head of Marketing, producing campaigns that generated <strong>4,000+ qualified leads/month</strong> tracked via Pancake CRM",
+        "Produced high-converting microcopy for WhatsApp blasts & offline media (brochures, pamphlets), generating up to <strong>IDR 126M/month in attributable revenue</strong>",
+        "Redesigned KOL collaboration framework — <strong>cutting marketing spend by IDR 40M/month</strong> while maintaining lead volume",
+        "Managed all digital touchpoints: Shopee, Tokopedia, Google Business Suite"
+      ]
+    },
+    {
+      company: "Search Agency",
+      role: "Freelance Content Writer",
+      date: "Feb 2024 – Sep 2024",
+      icon: "✍️",
+      bullets: [
+        "Delivered SEO-optimized long-form & short-form content for major FMCG brands, working within tight editorial briefs alongside content strategists and editors",
+        "Ensured factual integrity through rigorous research, fact-checking, and brand voice alignment"
+      ],
+      clients: "Clients: Morinaga Chil*GO · Morinaga ID · Morinaga Morigro · PRENAGEN"
+    },
+    {
+      company: "Karier.mu",
+      role: "Freelance Assistant SEO Tutor (Prakerja)",
+      date: "2023 – Oct 2024",
+      icon: "📚",
+      bullets: [
+        "Facilitated SEO learning for <strong>500+ Prakerja participants</strong> — bridging theory and application through discussion, Q&A, and supplementary material outside class",
+        "Reviewed and delivered structured feedback on <strong>300+ participant assignments</strong>, maintaining accurate individual progress records",
+        "Managed full class administration: scheduling, participant lists, material completeness, and operations coordination"
+      ]
+    },
+    {
+      company: "SALVO Agency",
+      role: "Content Writer",
+      date: "2022 – 2023",
+      icon: "🎯",
+      bullets: [
+        "Led monthly editorial planning and content production across multiple formats: <strong>SEO articles, 500+ post-purchase app copies, PR releases, CRM content</strong> (push notifications, email newsletters), and EN↔ID localization",
+        "Coordinated with design teams and managed cross-functional communication pipelines",
+      ],
+      clients: "Clients: Samsung Members (SEIN) · PIXY · Softex · Paseo (APP Sinar Mas) · Camel (PT JTI) · Kreasi Sasa (PT Sasa Inti)"
+    }
+  ],
+
+  skills: [
+    {
+      category: "Content & Copywriting",
+      icon: "✍️",
+      items: [
+        { name: "Content Strategy", hot: true },
+        { name: "Copywriting", hot: true },
+        { name: "Microcopy", hot: false },
+        { name: "Editorial Planning", hot: false },
+        { name: "PR Writing", hot: false },
+        { name: "EN↔ID Localization", hot: false }
+      ]
+    },
+    {
+      category: "SEO & Analytics",
+      icon: "📈",
+      items: [
+        { name: "SEO", hot: true },
+        { name: "Google Search Console", hot: true },
+        { name: "Google Analytics", hot: true },
+        { name: "WordPress", hot: false },
+        { name: "Google Business Profile", hot: false }
+      ]
+    },
+    {
+      category: "Social & Growth",
+      icon: "🚀",
+      items: [
+        { name: "Instagram", hot: true },
+        { name: "TikTok", hot: true },
+        { name: "KOL Marketing", hot: false },
+        { name: "Community Management", hot: false },
+        { name: "Social Media Strategy", hot: true }
+      ]
+    },
+    {
+      category: "E-commerce & CRM",
+      icon: "🛍️",
+      items: [
+        { name: "Shopify", hot: true },
+        { name: "Webflow", hot: false },
+        { name: "Shopee", hot: false },
+        { name: "Tokopedia", hot: false },
+        { name: "Pancake CRM", hot: false }
+      ]
+    },
+    {
+      category: "Design & Video",
+      icon: "🎨",
+      items: [
+        { name: "Canva", hot: false },
+        { name: "Figma", hot: false },
+        { name: "CapCut", hot: false }
+      ]
+    },
+    {
+      category: "Tools & Admin",
+      icon: "⚙️",
+      items: [
+        { name: "n8n Automation", hot: false },
+        { name: "Google Workspace", hot: false },
+        { name: "Microsoft Excel", hot: false },
+        { name: "Trello", hot: false },
+        { name: "Elementor", hot: false }
+      ]
+    }
+  ],
+
+  /* ================================================================
+     ➕ ADD YOUR PORTFOLIO ITEMS HERE
+     Each item belongs to a "category" that matches a tab.
+     Existing categories: "Articles", "Branding", "Web Dev", "Social Media", "Copywriting"
+     Add a new category name to create a new tab automatically!
+
+     For articles: set type to "article" and fill in "client" and "date"
+     For other work: set type to "project"
+     ================================================================ */
+  portfolios: [
+
+    // ── ARTICLES ──────────────────────────────────────────────────
+    {
+      category: "Articles",
+      type: "article",
+      title: "10 Cara Mengurangi Kelembapan Ruangan, dari yang Manual sampai Profesional",
+      client: "HydroClean Indonesia",
+      date: "Dec 18, 2025",
+      icon: "💧",
+      desc: "SEO article covering 11 practical methods to reduce indoor humidity — from natural desiccants and exhaust fans to professional-grade dehumidifiers. Includes ideal humidity benchmarks, monitoring tools, and prevention tips.",
+      tags: ["SEO Writing", "Health & Home", "Bahasa Indonesia", "HydroClean"],
+      link: "https://hydroclean.id/blogs/tips/10-cara-mengurangi-kelembapan-ruangan-dari-yang-manual-sampai-profesional"
+    },
+    {
+      category: "Articles",
+      type: "article",
+      title: "Cara Menghilangkan Tungau di Kasur dengan 7 Metode dari DIY sampai Profesional",
+      client: "HydroClean Indonesia",
+      date: "Dec 19, 2025",
+      icon: "🛏️",
+      desc: "In-depth SEO guide on eliminating dust mites from mattresses — covering detection, hot water washing, HEPA vacuuming, UV steaming, sun-drying, and long-term prevention strategies. Structured for both DIY readers and professional service seekers.",
+      tags: ["SEO Writing", "Health & Home", "Bahasa Indonesia", "HydroClean"],
+      link: "https://hydroclean.id/blogs/tips/cara-menghilangkan-tungau-di-kasur"
+    },
+    {
+      category: "Articles",
+      type: "article",
+      title: "Tungau Kasur dan Kutu Itu Beda Banget! Penanganannya Juga Beda!",
+      client: "HydroClean Indonesia",
+      date: "Dec 19, 2025",
+      icon: "🔬",
+      desc: "Educational SEO article clarifying the biological and behavioral differences between dust mites and bed bugs — their physical traits, habitats, health impacts, and why their treatment approaches cannot be swapped. Backed by academic and health references.",
+      tags: ["SEO Writing", "Educational", "Bahasa Indonesia", "HydroClean"],
+      link: "https://hydroclean.id/blogs/information/jangan-salah-ini-bedanya-kutu-dan-tungau-beda-penanganan-juga"
+    },
+    /* ── ADD MORE ARTICLES BELOW ──
+    {
+      category: "Articles",
+      type: "article",
+      title: "Your Article Title",
+      client: "Client / Publication Name",
+      date: "Month YYYY",
+      icon: "📝",
+      desc: "Short description of the article — topic, angle, and any notable results (e.g. ranked #1, 5K+ views).",
+      tags: ["SEO", "Tag2", "Tag3"],
+      link: "https://article-url-here.com"
+    },
+    */
+
+    // ── BRANDING ──────────────────────────────────────────────────
+    {
+      category: "Branding",
+      type: "project",
+      title: "Brand Rebranding — HydroClean Indonesia",
+      client: "HydroClean Indonesia",
+      date: "2020 – Present",
+      icon: "🌊",
+      desc: "Collaborated directly with Wisnu Darmawan, Chairman of the Dian Sastro Foundation, to overhaul HydroClean's brand communication strategy. Shifted from functional product messaging to an emotionally driven premium narrative — strengthening customer connection and market differentiation.",
+      tags: ["Brand Strategy", "Storytelling", "Premium Positioning", "Copy Direction"],
+      link: ""
+    },
+    /* ── ADD MORE BRANDING BELOW ──
+    {
+      category: "Branding",
+      type: "project",
+      title: "Project Name",
+      client: "Client Name",
+      date: "Year",
+      icon: "✨",
+      desc: "What you did and what the outcome was.",
+      tags: ["Tag1", "Tag2"],
+      link: ""
+    },
+    */
+
+    // ── WEB DEV ───────────────────────────────────────────────────
+    {
+      category: "Web Dev",
+      type: "project",
+      title: "Website Build — MR KPR Financial Services",
+      client: "MR KPR",
+      date: "2023",
+      icon: "🏠",
+      desc: "Took full ownership of designing and building the company website using WordPress and Elementor. Structured to clearly communicate complex financial services to potential clients, establishing the brand's digital credibility as a new market entrant.",
+      tags: ["WordPress", "Elementor", "UX Writing", "Financial Services"],
+      link: ""
+    },
+    /* ── ADD MORE WEB DEV BELOW ──
+    {
+      category: "Web Dev",
+      type: "project",
+      title: "Project Name",
+      client: "Client Name",
+      date: "Year",
+      icon: "💻",
+      desc: "What you built and why it mattered.",
+      tags: ["WordPress", "Webflow"],
+      link: "https://live-site.com"
+    },
+    */
+
+    // ── SOCIAL MEDIA ──────────────────────────────────────────────
+    /* ── ADD SOCIAL MEDIA WORK BELOW ──
+    {
+      category: "Social Media",
+      type: "project",
+      title: "Campaign / Account Name",
+      client: "Brand Name",
+      date: "Period",
+      icon: "📱",
+      desc: "What you created, reach, engagement, or leads generated.",
+      tags: ["Instagram", "TikTok", "Content Strategy"],
+      link: ""
+    },
+    */
+
+    // ── COPYWRITING ───────────────────────────────────────────────
+    /* ── ADD COPYWRITING WORK BELOW ──
+    {
+      category: "Copywriting",
+      type: "project",
+      title: "Campaign / Copy Name",
+      client: "Brand Name",
+      date: "Period",
+      icon: "✍️",
+      desc: "The brief, your approach, and results or highlights.",
+      tags: ["Microcopy", "WhatsApp Blast", "CRM"],
+      link: ""
+    },
+    */
+
+  ]
+
+};
+
+/* ================================================================
+   RENDERING — No need to edit below this line
+   ================================================================ */
+
+// About
+document.getElementById('about-text').innerHTML = DATA.about;
+const iList = document.getElementById('interest-list');
+DATA.interests.forEach(i => {
+  const li = document.createElement('li');
+  li.textContent = i;
+  iList.appendChild(li);
+});
+
+// Experience
+const expContainer = document.getElementById('exp-timeline');
+DATA.experience.forEach((job, idx) => {
+  const yearMatch = job.date.match(/(\d{4})/);
+  const yearShort = yearMatch ? "'" + yearMatch[1].slice(2) : '??';
+
+  let bulletsHTML = job.bullets.map(b => `<li>${b}</li>`).join('');
+  let clientsHTML = job.clients ? `<div class="exp-clients">📌 ${job.clients}</div>` : '';
+
+  expContainer.innerHTML += `
+    <div class="exp-item reveal">
+      <div class="exp-dot">${job.icon}<br>${yearShort}</div>
+      <div class="exp-card">
+        <div class="exp-card-header">
+          <div class="exp-company">${job.company}</div>
+          <div class="exp-date">${job.date}</div>
+        </div>
+        <div class="exp-card-body">
+          <div class="exp-role">${job.role}</div>
+          <ul class="exp-bullets">${bulletsHTML}</ul>
+          ${clientsHTML}
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+// Skills
+const skillsContainer = document.getElementById('skills-grid');
+DATA.skills.forEach(cat => {
+  const tags = cat.items.map(s =>
+    `<span class="skill-tag${s.hot ? ' hot' : ''}">${s.name}</span>`
+  ).join('');
+  skillsContainer.innerHTML += `
+    <div class="skill-category reveal">
+      <div class="skill-cat-header"><span>${cat.icon}</span>${cat.category}</div>
+      <div class="skill-tags">${tags}</div>
+    </div>
+  `;
+});
+
+// Portfolio — build category tabs and grouped cards
+const CATEGORY_META = {
+  "Articles":     { icon: "📝", color: "#00c9ff" },
+  "Branding":     { icon: "✨", color: "#ff6b9d" },
+  "Web Dev":      { icon: "💻", color: "#a78bfa" },
+  "Social Media": { icon: "📱", color: "#34d399" },
+  "Copywriting":  { icon: "✍️", color: "#fbbf24" },
+};
+
+// Collect categories preserving order, deduplicated
+const allCats = ["All", ...DATA.portfolios.reduce((acc, p) => {
+  if (!acc.includes(p.category)) acc.push(p.category);
+  return acc;
+}, [])];
+
+const tabsContainer = document.getElementById('portfolio-tabs');
+const catsContainer = document.getElementById('portfolio-categories');
+
+// Build tabs
+allCats.forEach((cat, i) => {
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
+  const meta = CATEGORY_META[cat];
+  btn.innerHTML = meta ? `${meta.icon} ${cat}` : cat;
+  btn.dataset.cat = cat;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.portfolio-category').forEach(el => {
+      el.classList.toggle('hidden', cat !== 'All' && el.dataset.cat !== cat);
+    });
+  });
+  tabsContainer.appendChild(btn);
+});
+
+// Group items
+const grouped = {};
+DATA.portfolios.forEach(p => {
+  if (!grouped[p.category]) grouped[p.category] = [];
+  grouped[p.category].push(p);
+});
+
+// Render each category block
+Object.entries(grouped).forEach(([cat, items]) => {
+  const meta = CATEGORY_META[cat] || { icon: "📁", color: "#888" };
+  const block = document.createElement('div');
+  block.className = 'portfolio-category reveal';
+  block.dataset.cat = cat;
+
+  let cardsHTML = items.map(p => {
+    const tags = p.tags.map(t => `<span class="skill-tag">${t}</span>`).join('');
+    const linkHTML = p.link
+      ? `<a href="${p.link}" target="_blank" class="project-link">Read Article →</a>`
+      : `<span style="font-family:var(--font-mono);font-size:0.6rem;color:#bbb;text-transform:uppercase;letter-spacing:1px;margin-top:0.75rem;display:inline-block">Link coming soon</span>`;
+
+    const topHeight = p.type === 'article' ? '120px' : '140px';
+
+    const metaHTML = p.type === 'article' ? `
+      <div class="article-meta">
+        <span class="article-date">${p.date}</span>
+        <span class="article-client">${p.client}</span>
+      </div>` : `
+      <div class="article-meta">
+        <span class="article-client">${p.client || ''}</span>
+        ${p.date ? `<span class="article-date">${p.date}</span>` : ''}
+      </div>`;
+
+    return `
+      <div class="project-card ${p.type === 'article' ? 'article-card' : ''} reveal">
+        <div class="project-card-top" style="height:${topHeight};background:#111;">
+          <div class="proj-bg-text">${cat.toUpperCase()}</div>
+          <div class="proj-icon">${p.icon}</div>
+          <div class="project-type-badge" style="background:${meta.color};color:#111;border-color:#111">${cat}</div>
+        </div>
+        <div class="project-card-body">
+          ${metaHTML}
+          <div class="project-title">${p.title}</div>
+          <p class="project-desc">${p.desc}</p>
+          <div class="project-tags">${tags}</div>
+          ${linkHTML}
+        </div>
+      </div>`;
+  }).join('');
+
+  // Add "add more" placeholder card for each category
+  cardsHTML += `
+    <a class="add-project-card" href="#" onclick="alert('To add a ${cat} item:\\n\\nOpen this HTML file and scroll to DATA.portfolios\\nCopy the commented template in the ${cat} section and fill in your details!'); return false;">
+      <div class="add-icon">＋</div>
+      <div class="add-label">Add ${cat}</div>
+      <div class="add-sub">Edit DATA.portfolios in the file</div>
+    </a>`;
+
+  block.innerHTML = `
+    <div class="cat-label">
+      <span class="cat-icon">${meta.icon}</span>
+      ${cat}
+      <span class="cat-count">${items.length} work${items.length > 1 ? 's' : ''}</span>
+    </div>
+    <div class="projects-grid">${cardsHTML}</div>
+  `;
+  catsContainer.appendChild(block);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
